@@ -1,3 +1,6 @@
+import random
+	
+	
 	# INSTRUCTIONS
 
 	# In case it is not clear, the Question appears first, then examples, then any hints and finally the function that you need to complete appears underneath:
@@ -32,7 +35,10 @@
 	# How does a for loop iterate through a string?
 
 def one(input):
-	return ""
+	word = ""
+	for i in range(len(input)):
+		word = word + input[i] + input[i] + input[i]
+	return word
 
 	# <QUESTION 2>
 
@@ -50,7 +56,16 @@ def one(input):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(input):
-    return False
+	count= 0
+	for i in range(input):
+		if input % (i+1) == 0:
+			count+=1
+	if count > 2:
+		return False
+	else:
+		return True
+
+
 
 	# <QUESTION 3>
 
@@ -67,7 +82,11 @@ def two(input):
 	# What happens if you multiply a string by a number?
 
 def three(a):
-	return 1
+	total = 0
+	total = a + (a*11) + (a*111) + (a*1111)
+	return total
+
+
 
 	# <QUESTION 4>
 
@@ -96,7 +115,10 @@ def three(a):
 	# How would you seperate a string into characters?
 
 def four(input1, input2):
-	return ""
+	word = ""
+	for i in range(len(input1)):
+		word = word + input1[i] + input2[i]
+	return word
 
 	# <QUESTION 5>
 
@@ -113,7 +135,12 @@ def four(input1, input2):
 	# The random module contains a function called randint.
 
 def five():
-    return []
+	list = []
+	for i in range(5):
+		list.append(random.randrange(100,200,2))
+
+	return list
+
 
 	# <QUESTION 6>
 
@@ -132,7 +159,11 @@ def five():
 	# There are no hints for this question.
     
 def six(input):
-	return False
+	word = input.lower()
+	if word[-2] == "p" and word[-1] == "y":
+		return True
+	else:
+		return False
 
 	# <QUESTION 7>
 
@@ -156,7 +187,19 @@ def six(input):
 	# Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-	return False
+	list = []
+	list.append(a)
+	list.append(b)
+	list.append(c)
+	list.sort()
+	compare = abs(list[0] - list[1])
+	if compare == abs(list[1]-list[2]):
+		return True
+	else:
+		return False
+
+
+
 
 	# <QUESTION 8>
 
@@ -174,7 +217,33 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(input,  a):
-	return ""
+	word = input
+	temp = ""
+	luck = 0
+	if a == 1 :
+		luck = 0
+	elif a == 5:
+		luck = 0
+	else:
+		luck =1
+	
+	for i in range(a):
+		for i in range(len(word)):
+			if i != round(len(word)/2)-luck:
+				temp = temp + word[i]
+		word = temp
+		
+		temp=""
+
+	
+	return word
+
+
+
+
+
+
+
 
 	# <QUESTION 9>
 
@@ -207,6 +276,7 @@ def nine(string1, string2):
 
 	# <HINT>
 	# Think about nesting for loops.
+	#for some reason my last work wont recorgnis new things idk y
 
 def ten(X,Y):
 	return []
